@@ -119,8 +119,15 @@
     // findEvenNums([0, 1, 2, 3, 4]) // should return [0, 2, 4]
     // ❗ Notes:
     // 🧠 Use any kind of loop you'd like and the push method to populate the array of even numbers.
-    function findEvenNums() {
-
+    function findEvenNums(evens) {
+      let result = []
+      for (let index = 0; index < evens.length; index++) {
+        let comb = evens[index]
+        if ((comb % 2) === 0) {
+          result.push(comb);
+        }
+      }
+      return result;
     }
 
     // 👉 CHALLENGE 6
@@ -130,19 +137,42 @@
     // 🧠 Ages in the subarrays should appear in the same order they appeared in the original array.
     // 🧠 Examples of usage:
     // separateAges([31, 12, 25, 65, 84, 20]) // should return [[12, 20], [31, 25, 65, 84]]
-    function separateAges() {
-
+    function separateAges(ages) {
+      let under21 = []
+      let over21 = []
+      for (let ageorder = 0; ageorder < ages.length; ageorder++){
+        let comb = ages[ageorder]
+        if (comb < 21){
+          under21.push(comb)
+        }
+        else {
+          over21.push(comb)
+        }
+      }
+      return [under21, over21]
     }
 
-    // 👉 CHALLENGE 7
+       // 👉 CHALLENGE 7
     // 🧠 The function headAndTail takes an array as its argument.
     // 🧠 It returns an object with two properties: "head" and "tail".
     // 🧠 The "head" prop contains the first element of the array.
     // 🧠 The "tail" prop contains an array holding the elements of the array after the first one.
     // 🧠 Examples of usage:
     // headAndTail([1, 2, 3]) // should return { head: 1, tail: [2, 3] }
-    function headAndTail() {
-
+    function headAndTail(headortail) {
+      let head = {}
+      let tail = []
+      for (let index = 0; index < headortail.length; index++){
+        let comb = headortail[index]
+        if (index === 0){
+          head = comb;
+        }
+        else {
+          tail.push(comb)
+        }
+      }
+      return {head, tail};
+      console.log(head, tail)
     }
 
     // 👉 CHALLENGE 8
