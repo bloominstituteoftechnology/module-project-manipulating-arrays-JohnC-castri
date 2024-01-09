@@ -31,8 +31,19 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
     function sumNumsFor(nums) {
-
+      let total = 0;
+  for ( stopper = 0; stopper < nums.length; stopper++) {
+    let reverser = nums[stopper]
+    if (typeof reverser === 'number') {
+      if (reverser === 13) {
+        return "I'm too superstitious!";
+      }
+      total += reverser;
     }
+  }
+  return total;
+}
+
 
     // 👉 CHALLENGE 2
     // 🧠 The function stripVowels takes a string, strips all lowcase vowel letters (a,e,i,o,u) from it and returns it.
@@ -41,16 +52,36 @@
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
-
+      let result = [];
+      const split = str.split("")
+  for (let stopper1 = 0; stopper1 < split.length; stopper1++) {
+    const remover = split[stopper1]
+    if (remover !== 'a' && remover !== 'e' && remover !== 'i' && remover !== 'o' && remover !== 'u')
+      result.push(remover)
     }
+    return result.join('');
+  }
+
 
     // 👉 CHALLENGE 3
     // 🧠 Reimplement sumNumsFor using a while loop instead of a for loop.
     // 🧠 Examples of usage:
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
-    function sumNumsWhile() {
-
+    function sumNumsWhile(nums) {
+      let tottal = 0;
+      let index = 0;
+      while (index < nums.length) {
+        let comb = nums[index];
+        if (typeof comb === 'number') {
+          if (comb === 13) {
+            return "I'm too superstitious!";
+          }
+          tottal += comb
+        }
+      index++;
+    }
+  return tottal;
     }
 
     // 👉 CHALLENGE 4
@@ -70,8 +101,15 @@
     // 🧠 There are many ways to solve this, but practice using a while loop.
     // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
     // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
-    function fightMonsters() {
-
+    function fightMonsters(lifepoints) {
+      let rounds = 1
+      while (lifepoints > 0){
+      lifepoints -= rounds
+      if (lifepoints <= 0) {
+        return `You died in round ${rounds}`
+      }
+      rounds ++
+      }
     }
 
     // 👉 CHALLENGE 5
